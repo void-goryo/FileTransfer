@@ -16,10 +16,9 @@ class ParentWindow(Frame):
         self.master.destroy()   #closes window
 
     def getPath1(self):         #opens file manager and stores file path
-        path1 = ('{}'.format(fd.askopenfilename()))
-        path1 = StringVar(path1)
-        print(path1)
-        return(path1)
+        path1 = fd.askdirectory()
+        self.vartxt1.delete(0,END)
+        self.vartxt1.insert(0, path1)
 
     def __init__(self, master, *args, **kwargs):    #initalizes Frame
         Frame.__init__(self, master, *args, **kwargs)

@@ -29,11 +29,11 @@ class ParentWindow(Frame):
         self.txt2.insert(0, path2)
 
     def copyFiles(self):
-        path1 = self.txt1.get()
-        path2 = self.txt2.get()
-        os.listdir(path1)
-        for i in path1:
-            shutil.copy(path1+i, path2)
+        path1=self.txt1.get()
+        path2=self.txt2.get()
+        source=os.listdir(path1)
+        for i in source:
+            shutil.copy(path1+'/'+i, path2)
 
     def __init__(self, master, *args, **kwargs):    #initalizes Frame
         Frame.__init__(self, master, *args, **kwargs)
